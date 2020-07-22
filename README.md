@@ -1,6 +1,23 @@
 # Azure Container Registry
 Terraform module to create ACR
 
+# Usage
+```
+module "acr" {
+        source  = "github.com/iquzart/terraform-azurerm-acr"
+        #version = "0.x.y"
+
+        name                      = "ACR Name"
+        resource_group_name       = "Resource Group Name"
+        location                  = "Resource Location"
+        sku                       = "ACR SKU"
+        admin_enabled             = "true od false"
+        georeplication_locations  = "Georeplication locations (premium SKU)"
+        tags                      = "Resource Tags"
+}
+
+```
+
 # Variables
 ```
 variable "name" {
@@ -36,21 +53,5 @@ variable "georeplication_locations" {
 }
 ```
 
-# Usage
-```
-module "acr" {
-        source  = "github.com/iquzart/terraform-azurerm-acr"
-        #version = "0.x.y"
-
-        name                      = "ACR Name"
-        resource_group_name       = "Resource Group Name"
-        location                  = "Resource Location"
-        sku                       = "ACR SKU"
-        admin_enabled             = "true od false"
-        georeplication_locations  = "Georeplication locations (premium SKU)"
-        tags                      = "Resource Tags"
-}
-
-```
-
 # License
+MIT
